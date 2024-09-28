@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function FilterByCategory() {
 	const [products, setProducts] = useState([]);
@@ -42,12 +42,12 @@ export default function FilterByCategory() {
 					<p className='text-gray-700 mb-4'>
 						{product.strInstructions.slice(0, 100)}...
 					</p>
-					<a
-						href={`/product/${product.strMeal}`}
+					<Link
+						to={`/product/${product.strMeal}`}
 						className='text-blue-500 underline'
 					>
 						View Details
-					</a>
+					</Link>
 				</div>
 			))}
 		</div>
